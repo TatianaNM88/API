@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "54681159-f9c0-4b1e-92a0-ac2f3c3da363",
+		"name": "informatorio api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Pablo\",\r\n    \"apellido\": \"López\",\r\n    \"email\": \"pablolopez@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"ciudad\": \"Quitilipi\",\r\n    \"provincia\": \"Chaco\",\r\n    \"pais\": \"Argentina\",\r\n    \"tipo\": \"USUARIO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios/1/quitar"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Florencia\",\r\n    \"apellido\": \"Diez\",\r\n    \"email\": \"florenciadiez@gmail.com\",\r\n    \"password\": \"17282637\",\r\n    \"ciudad\": \"Charata\",\r\n    \"provincia\": \"Chaco\",\r\n    \"pais\": \"Argentina\",\r\n    \"tipo\": \"OWNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios/1"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener por ciudad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios?ciudad=Resistencia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Resistencia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener por fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios?fecha=2021-12-11T19:10:58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2021-12-11T19:10:58"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "emprendimiento",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Termo solar\",\r\n    \"descripcion\": \"Electrodoméstico sustentable\",\r\n    \"contenido\": \"Permite calentar agua utilizando la energía solar\",\r\n    \"objetivo\": 200000,\r\n    \"publicado\": true,\r\n    \"url\": \"google/images\",\r\n    \"tags\": [\r\n        {\r\n           \"nombre\": \"Ecofriendly\"\r\n        },\r\n        {\r\n            \"nombre\": \"Outdoor\"\r\n        },\r\n        {\r\n            \"nombre\": \"Electrodomésticos\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios/1/emprendimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/1/quitar"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Heladera fast\",\r\n    \"descripcion\": \"Electrodoméstico ecológico\",\r\n    \"contenido\": \"Utiliza panel solar para refrigerar\",\r\n    \"objetivo\": 70000,\r\n    \"publicado\": false,\r\n    \"url\": \"google/images\",\r\n    \"tags\": [\r\n        {\r\n           \"nombre\": \"Panelsolar\"\r\n        },\r\n        {\r\n            \"nombre\": \"Heladera\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/emprendimientos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/ap1/v1/emprendimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "por tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ap1/v1/emprendimientos?nombre=Cocina",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ap1",
+								"v1",
+								"emprendimientos"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Cocina"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sin publicar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/no_publicados"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "emprendimiento_evento",
+			"item": [
+				{
+					"name": "inscribir emprendimiento a evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/1/eventos/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "evento",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Electrodomésticos ecofriendly\",\r\n    \"detalles\": \"Evento social que busca promover utilizacion de electrodomesticos amigables con el planeta\",\r\n    \"fechaDecierre\": \"2021/12/20\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 500000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/eventos"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/1/eliminar"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/actualizar-estado"
+					},
+					"response": []
+				},
+				{
+					"name": "ranking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/1/ranking"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "voto",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generado\": \"mobile\",\r\n    \"emprendimientoId\": \"1\",\r\n    \"usuarioId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/votos"
+					},
+					"response": []
+				},
+				{
+					"name": "total votos usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/votos/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
